@@ -1,0 +1,30 @@
+// Type Assertion
+
+interface Person {
+    // [key: string]: string;
+    name: string;
+    email: string;
+}
+
+const myObj: Person = {
+    name: "Raj",
+    email: "raj@gmail.com"
+}
+
+const getName = () => {
+    return myObj["name"];
+}
+
+const getEmail = () => {
+    return myObj["email"];
+}
+
+// const getData = (key: "name" | "email"): string => {
+//     return myObj[key]
+// }
+
+const getData = (key: keyof Person): string => {
+    return myObj[key]
+}
+
+getData("name");

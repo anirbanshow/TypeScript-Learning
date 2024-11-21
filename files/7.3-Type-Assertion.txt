@@ -1,0 +1,17 @@
+// Type Assertion
+
+interface Person {
+    name: string;
+    email: string;
+}
+
+const myObj: Person = {
+    name: "Raj",
+    email: "raj@gmail.com"
+}
+
+// const key = "name";
+let key = "name";
+
+// myObj[key as keyof Person];
+// myObj[key as keyof typeof myObj];

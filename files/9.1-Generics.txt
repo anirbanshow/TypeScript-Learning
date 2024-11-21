@@ -1,0 +1,104 @@
+// const func = <CustomType>(n: CustomType): CustomType => {
+//     let text: CustomType = n
+//     return n;
+// }
+// const func = <T>(n: T): T => {
+//     return n;
+// }
+// const ans1 = func(20);
+// const ans2 = func("20");
+// const ans3 = func(false);
+// ----------------------------------------------
+// type Person = {
+//     name: string;
+//     age: number;
+// }
+
+// const func = <Type>(n: Type): Type => {
+//     return n;
+// }
+
+// const person1: Person = {
+//     name: "echo",
+//     age: 101
+// }
+
+// const ans1 = func<Person>(person1);
+// ----------------------------------------------
+// const arr1: number[] = [];
+// const arr2: Array<number | boolean | string> = [1, true, "tumi"];
+// ----------------------------------------------
+// const func = <T, U>(n: T, o: U): { n: T, o: U } => {
+//     return { n, o };
+// }
+// const ans = func<number, string>(5, "echo");
+// ----------------------------------------------
+// const func = <T, U extends T>(n: T, o: U): { n: T, o: U } => {
+//     return { n, o };
+// }
+// const ans = func<number, number>(5, 10);
+// ----------------------------------------------
+// type Person1 = {
+//     name: string;
+//     age: number;
+// }
+// type Person2 = {
+//     name: string;
+//     age: number;
+//     email: string
+// }
+// const user1: Person1 = {
+//     name: "echo",
+//     age: 20
+// }
+// const user2: Person2 = {
+//     name: "echo",
+//     age: 20,
+//     email: "abc@email.com"
+// }
+// const func = <T, U extends T>(n: T, o: U): { n: T, o: U } => {
+//     return { n, o };
+// }
+// const ans = func<Person1, Person2>(user1, user2);
+// console.log(ans);
+// ----------------------------------------------
+type Person = {
+    name: string;
+    age: number;
+}
+
+const users: Person[] = [
+    {
+        name: "Echo",
+        age: 20
+    },
+    {
+        name: "Lata",
+        age: 22
+    },
+    {
+        name: "Sima",
+        age: 35
+    },
+    {
+        name: "Sita",
+        age: 18
+    },
+    {
+        name: "Sita",
+        age: 22
+    }
+];
+
+const filterByPeople = <T, U extends keyof T>(
+    arr: T[],
+    property: U,
+    value: T[U]
+): T[] => {
+    return arr.filter(item => item[property] === value);
+}
+
+const filteredPeopleByName = filterByPeople(users, "name", "Sita");
+const filteredPeopleByAge = filterByPeople(users, "age", 22);
+console.log(filteredPeopleByName);
+console.log(filteredPeopleByAge);

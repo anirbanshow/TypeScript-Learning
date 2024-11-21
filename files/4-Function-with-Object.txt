@@ -1,0 +1,25 @@
+// Function with Object
+
+interface ProductType {
+    name: string;
+    stock: number;
+    price: number;
+    photo: string;
+    readonly id: string;
+}
+
+type GetDataType = (product: ProductType) => void;
+
+const getData: GetDataType = (product) => {
+    console.log(product);
+}
+
+const productOne: ProductType = {
+    name: "string",
+    stock: 200,
+    price: 500,
+    photo: "string",
+    id: "abc"
+};
+
+getData(productOne);

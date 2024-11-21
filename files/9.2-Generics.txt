@@ -1,0 +1,23 @@
+// Generics with Coders Gyan.
+
+// function logString(args: string) {
+//     console.log(args);
+//     return args;
+// }
+
+// function logNumber(args: number) {
+//     console.log(args);
+//     return args;
+// }
+
+// function logArray(args: any[]) {
+//     console.log(args);
+//     return args;
+// }
+
+// function logAnything<T>(args: T): T {
+//     console.log(args);
+//     return args;
+// }
+
+// logAnything(true);

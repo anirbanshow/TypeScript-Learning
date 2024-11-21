@@ -1,0 +1,36 @@
+// Class
+
+class Player {
+    public readonly id: string;
+
+    constructor(
+        private height: number,
+        public weight: number,
+        protected power: number
+    ) {
+        this.id = String(Math.random() * 100);
+    }
+
+    getMyEight = () => this.height;
+}
+
+class Elf extends Player {
+    special: boolean;
+
+    constructor(height: number, weight: number, power: number, special: boolean) {
+        super(height, weight, power);
+        this.special = special;
+    }
+
+    getMyPower = () => {
+        return this.power;
+    }
+}
+
+const object = new Elf(100, 200, 500, true);
+
+console.log("weight", object.weight);
+console.log("getMyEight", object.getMyEight());
+console.log("getMyPower", object.getMyPower());
+console.log("id", object.id);
+

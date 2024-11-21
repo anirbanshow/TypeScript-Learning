@@ -1,0 +1,43 @@
+interface Obj {
+    height: number;
+    weight: number;
+    gender?: boolean;
+}
+
+const person1: Obj = {
+    height: 10,
+    weight: 50,
+    gender: true
+}
+
+const person2: Obj = {
+    height: 10,
+    weight: 50
+}
+
+type FuncType = (n: number, m: number) => void;
+
+interface NewObj extends Obj {
+    scolar: boolean;
+    func: FuncType
+}
+
+const newPerson1: NewObj = {
+    height: 10,
+    weight: 50,
+    scolar: true,
+    func: (n, m) => {
+        console.log(n * m);
+    },
+}
+
+const newPerson2: NewObj = {
+    height: 10,
+    weight: 50,
+    scolar: true,
+    func: (n, m) => {
+        console.log(n * m);
+    },
+}
+
+newPerson2.func(2, 2);

@@ -1,0 +1,42 @@
+// type FuncType = (n: number, m: number, l?: number) => number | string;
+
+// Optional Paramter
+// const func: FuncType = (n, m, l) => {
+//     if (typeof l === "undefined") return "l was not provided";
+//     return n * m * l;
+// }
+
+// func(20, 20);
+
+// ----------------------------------------------
+
+// Default Paramter
+// type FuncType = (n: number, m: number, l?: number) => number | string;
+
+// const func: FuncType = (n, m, l = 20): number => {
+//     return n * m * l;
+// }
+
+// ----------------------------------------------
+
+// Default Paramter
+// const func = (n: number, m: number, l: number = 20): number => {
+//     return n * m * l;
+// }
+
+// func(2, 2);
+
+// ----------------------------------------------
+
+// Rest Operator
+type FuncType = (...m: number[]) => number[];
+
+const func: FuncType = (...m) => {
+    return m;
+}
+
+func(1, 2, 3, 4);
+
+function lol(n: number): number {
+    return 45;
+}

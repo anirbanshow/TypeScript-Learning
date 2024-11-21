@@ -1,0 +1,7 @@
+// Never Types
+const errorHandler = (): never => {
+    throw new Error();
+}
+
+type themeMode = "light" | "dark";
+const mode: themeMode = "light";

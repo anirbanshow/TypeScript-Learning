@@ -1,0 +1,28 @@
+// Class
+
+class Player {
+    public readonly id: string;
+
+    constructor(
+        private height: number,
+        public weight: number,
+        protected power: number
+    ) {
+        this.id = String(Math.random() * 100);
+    }
+
+    get getMyHeight(): number {
+        return this.height;
+    }
+
+    set setMyEight(val: number) {
+        this.height = val;
+    }
+}
+
+const object = new Player(100, 200, 500);
+console.log(object.getMyHeight);
+object.setMyEight = 500
+console.log(object.getMyHeight);
+
+

@@ -1,0 +1,117 @@
+// *** Utility Type ***
+
+// *** Partial<Type>
+// type UserType = {
+//     name: string,
+//     email: string
+// }
+// type User2 = Partial<UserType>
+// const user: UserType = {
+//     name: "echo",
+//     email: "eacho@gmail.com"
+// }
+//----------------------------------------
+// *** Required<Type> - opposite of partial
+// type UserType = {
+//     name?: string,
+//     email: string
+// }
+// type User2 = Required<UserType>
+// const user: User2 = {
+//     name: "echo",
+//     email: "eacho@gmail.com"
+// }
+//----------------------------------------
+// *** Readonly<Type>
+// type UserType = {
+//     name: string,
+//     email: string
+// }
+// type UserObj = Readonly<UserType>
+// const user: UserObj = {
+//     name: "echo",
+//     email: "eacho@gmail.com"
+// }
+// user.name = "123";
+//----------------------------------------
+// *** Records<Keys, Type>
+// type UserType = {
+//     name: string,
+//     email: string
+// }
+// type use1 = Record<"name" | "email", string>;
+// const user2: use1 = {
+//     name: "echo",
+//     email: "eacho@gmail.com"
+// }
+// interface UserInfo {
+//     age: number
+// };
+// type UserName = "echo" | "delta" | "bravo" | "watchover";
+// const users: Record<UserName, UserInfo> = {
+//     echo: { age: 34 },
+//     delta: { age: 34 },
+//     bravo: { age: 34 },
+//     watchover: { age: 34 },
+// }
+//----------------------------------------
+// *** Pick<Type, Keys>
+// interface OrderInfoType {
+//     readonly id: string;
+//     user: string;
+//     city: string;
+//     state: string;
+//     country: string;
+//     status: string;
+// }
+// type ShippingInfo = Pick<OrderInfoType, "city" | "state" | "country">;
+//----------------------------------------
+// *** Omit<Type, Keys>
+// interface OrderInfoType {
+//     readonly id: string;
+//     user: string;
+//     city: string;
+//     state: string;
+//     country: string;
+//     status: string;
+// }
+// type ShippingInfo = Omit<OrderInfoType, "city" | "state" | "country">;
+//----------------------------------------
+// *** Exclude<Type, ExcludedUnion>
+// type MyUnion = string | number | boolean;
+// type Random = Exclude<MyUnion, boolean>;
+//----------------------------------------
+// *** Extract<Type, Union>
+// type MyUnion = string | number | boolean;
+// type Random = Extract<MyUnion, boolean>;
+//----------------------------------------
+// *** NonNullable<Type>
+// type MyUnion = string | number | boolean | null | undefined;
+// type Random = NonNullable<MyUnion>;
+//----------------------------------------
+// *** Parameters<Type>
+// const myFunc = (a: number, b: string) => {
+//     console.log(a + b);
+// };
+// type Random = Parameters<typeof myFunc>;
+//----------------------------------------
+// *** ConstructorParameters<Type>
+// class SampleClass {
+//     constructor(public s: string, public t: string) { }
+// }
+// type Random = ConstructorParameters<typeof SampleClass>;
+//----------------------------------------
+// *** ReturnType<Type>
+// const myFunc = (a: number, b: string): string => {
+//     console.log(a + b);
+//     return a + b;
+// };
+// type Random = ReturnType<typeof myFunc>;
+//----------------------------------------
+// *** InstanceType<Type>
+//----------------------------------------
+class SampleClass {
+    constructor(public s: string, public t: string) { };
+}
+type Random = InstanceType<typeof SampleClass>;
+const user: Random = new SampleClass("44", "55");
